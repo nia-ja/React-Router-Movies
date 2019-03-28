@@ -12,7 +12,7 @@ const SavedList = (props) => {
       .filter(e => arr[e]).map(e => arr[e]);
      return unique;
   } 
-  
+
   return (
     <div className="saved-list">
       <h3>Saved Movies:</h3>
@@ -22,7 +22,7 @@ const SavedList = (props) => {
           <span className="saved-movie">{movie.title}</span>
         </NavLink>
       ))}
-      <Link to="/"><div className="home-button">Home</div></Link>
+      <Link to="/" className="home-button"><div>Home</div></Link>
     </div>
   );
 }

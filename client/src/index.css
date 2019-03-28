@@ -48,6 +48,12 @@ body {
 .saved-list h3 {
   margin-right: 10px;
 }
+.saved-list a:not(.saved-active) {
+  color: blue;
+}
+.saved-list a:hover:not(.home-button) {
+  text-decoration: underline;
+}
 
 .saved-movie {
   margin: 0 10px;
@@ -81,4 +87,8 @@ body {
 .home-button {
   padding: 5px 10px;
   background-color: lightskyblue;
+  text-decoration: none;
+}
+.home-button div {
+  color: black;
 }
