@@ -22,7 +22,7 @@ const SavedList = (props) => {
           <span className="saved-movie">{movie.title}</span>
         </NavLink>
       ))}
-      <Link to="/" className="home-button"><div>Home</div></Link>
+      <Link to="/" className="home-button"><div >Home</div></Link>
     </div>
   );
 }

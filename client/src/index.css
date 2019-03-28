@@ -78,6 +78,7 @@ body {
   border: 1px solid grey;
   padding: 5px 10px;
   background-color: lightseagreen;
+  cursor: pointer;
 }
 .save-button:hover {
   background-color: green;
@@ -85,10 +86,14 @@ body {
 }
 
 .home-button {
-  padding: 5px 10px;
-  background-color: lightskyblue;
   text-decoration: none;
 }
 .home-button div {
   color: black;
+  background-color: lightskyblue;
+  padding: 5px 10px;
+}
+.home-button div:hover {
+  color: white;
+  background-color: rgb(0, 157, 255);
 }
