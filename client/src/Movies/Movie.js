@@ -42,7 +42,10 @@ export default class Movie extends Component {
       return <div>Loading movie information...</div>;
     }
     return (
-      <MovieCard movie={this.state.movie} saveMovie={this.saveMovie} />
+      <div className="save-wrapper">
+        <MovieCard movie={this.state.movie} />
+        <div className="save-button" onClick={this.saveMovie}>Save</div>
+      </div>
     );
   }
 }

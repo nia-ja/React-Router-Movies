@@ -1,22 +1,30 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
 
-export default class SavedList extends Component {
-  constructor(props) {
-    super(props);
-  }
-
-  render() {
-    return (
-      <div className="saved-list">
-        <h3>Saved Movies:</h3>
-        {this.props.list.map(movie => (
-          <NavLink to={`/movies/${movie.id}`}>
-            <span className="saved-movie">{movie.title}</span>
-          </NavLink>
-        ))}
-        <Link to="/"><div className="home-button">Home</div></Link>
-      </div>
-    );
-  }
+const SavedList = (props) => {
+  
+  function getUnique(arr, comp) {
+    const unique = arr
+         .map(e => e[comp])
+       // store the keys of the unique objects
+      .map((e, i, final) => final.indexOf(e) === i && i)
+      // eliminate the dead keys & store unique objects
+      .filter(e => arr[e]).map(e => arr[e]);
+     return unique;
+  } 
+  
+  return (
+    <div className="saved-list">
+      <h3>Saved Movies:</h3>
+      { getUnique(props.list, 'id')
+        .map(movie => (
+        <NavLink exact to={`/movies/${movie.id}`} activeClassName="saved-active" className="saved-movie" key={movie.id}>
+          <span className="saved-movie">{movie.title}</span>
+        </NavLink>
+      ))}
+      <Link to="/"><div className="home-button">Home</div></Link>
+    </div>
+  );
 }
+
+export default SavedList;

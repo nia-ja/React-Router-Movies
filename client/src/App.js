@@ -12,7 +12,6 @@ export default class App extends Component {
       savedList: []
     };
   }
-
   addToSavedList = movie => {
     const savedList = this.state.savedList;
     savedList.push(movie);
@@ -20,6 +19,7 @@ export default class App extends Component {
   };
 
   render() {
+    console.log(this.state.savedList);
     return (
       <div>
         <SavedList list={this.state.savedList} />
